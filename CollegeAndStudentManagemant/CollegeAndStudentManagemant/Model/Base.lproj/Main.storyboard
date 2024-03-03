@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CollegeListViewController-->
+        <scene sceneID="cfr-nz-Xul">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CollegeListViewController" storyboardName="College" referencedIdentifier="CollegeListViewController" id="SGe-F3-1u3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jft-EW-hkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="-737"/>
+        </scene>
+        <!--Students Detail-->
+        <scene sceneID="Fb6-nZ-yvk">
+            <objects>
+                <viewController storyboardIdentifier="StudentListViewController" id="wGS-uV-Qh3" customClass="StudentListViewController" customModule="CollegeAndStudentManagemant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6tW-Ir-UWV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-G4-jV7">
+                                <rect key="frame" x="16" y="103" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wGS-uV-Qh3" id="twe-uo-66g"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7VA-Qg-foY">
+                                <rect key="frame" x="0.0" y="169" width="393" height="649"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wGS-uV-Qh3" id="AtF-M7-uyw"/>
+                                    <outlet property="delegate" destination="wGS-uV-Qh3" id="wTU-gv-n1f"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nJW-Wq-Fig"/>
+                        <color key="backgroundColor" red="0.30294252150000001" green="1" blue="0.97841960750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b3Q-G4-jV7" firstAttribute="top" secondItem="nJW-Wq-Fig" secondAttribute="top" id="0aX-jo-XQc"/>
+                            <constraint firstItem="7VA-Qg-foY" firstAttribute="leading" secondItem="nJW-Wq-Fig" secondAttribute="leading" id="YVo-db-93a"/>
+                            <constraint firstItem="nJW-Wq-Fig" firstAttribute="trailing" secondItem="b3Q-G4-jV7" secondAttribute="trailing" constant="16" id="aEB-Ta-2sn"/>
+                            <constraint firstItem="nJW-Wq-Fig" firstAttribute="bottom" secondItem="7VA-Qg-foY" secondAttribute="bottom" id="b4Y-gu-ypp"/>
+                            <constraint firstItem="7VA-Qg-foY" firstAttribute="trailing" secondItem="nJW-Wq-Fig" secondAttribute="trailing" id="owv-r2-mMX"/>
+                            <constraint firstItem="b3Q-G4-jV7" firstAttribute="leading" secondItem="nJW-Wq-Fig" secondAttribute="leading" constant="16" id="vYJ-15-OmE"/>
+                            <constraint firstItem="7VA-Qg-foY" firstAttribute="top" secondItem="b3Q-G4-jV7" secondAttribute="bottom" constant="10" id="wKe-Mn-8St"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Students Detail" id="nOc-ZC-uCP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lxo-z2-EQ0">
+                            <connections>
+                                <action selector="btnAddStudentClick:" destination="wGS-uV-Qh3" id="Z8X-wj-za6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="studentSearchText" destination="b3Q-G4-jV7" id="dk4-0D-JpT"/>
+                        <outlet property="studentTblView" destination="7VA-Qg-foY" id="aFl-V8-Pyf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSu-mb-ldy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="42" y="-127"/>
+        </scene>
+        <!--Student Form View Controller-->
+        <scene sceneID="sg7-Ca-dZ0">
+            <objects>
+                <viewController storyboardIdentifier="StudentFormViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Edu-pU-vx1" customClass="StudentFormViewController" customModule="CollegeAndStudentManagemant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xvi-SF-5fR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="lYU-Pj-q1g">
+                                <rect key="frame" x="23.333333333333343" y="148" width="346.33333333333326" height="130"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opq-Cx-v5b">
+                                        <rect key="frame" x="0.0" y="0.0" width="346.33333333333331" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52k-zR-yby">
+                                        <rect key="frame" x="0.0" y="48" width="346.33333333333331" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wc-xD-KNx">
+                                        <rect key="frame" x="0.0" y="96" width="346.33333333333331" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-LM-GBN">
+                                <rect key="frame" x="119.66666666666667" y="664" width="153.66666666666663" height="35"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save">
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnSaveClick:" destination="Edu-pU-vx1" eventType="touchUpInside" id="I7i-Qz-Qj2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rbo-Xx-90p"/>
+                        <color key="backgroundColor" red="0.30294252150000001" green="1" blue="0.97841960750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lYU-Pj-q1g" firstAttribute="height" secondItem="Xvi-SF-5fR" secondAttribute="height" multiplier="0.152582" id="1We-0l-09I"/>
+                            <constraint firstItem="lYU-Pj-q1g" firstAttribute="centerX" secondItem="Xvi-SF-5fR" secondAttribute="centerX" id="aHo-wJ-pLs"/>
+                            <constraint firstItem="lYU-Pj-q1g" firstAttribute="centerY" secondItem="Xvi-SF-5fR" secondAttribute="centerY" multiplier="0.5" id="cit-Wh-H3A"/>
+                            <constraint firstItem="Ogg-LM-GBN" firstAttribute="width" secondItem="Xvi-SF-5fR" secondAttribute="width" multiplier="0.39084" id="n5B-us-te4"/>
+                            <constraint firstItem="Ogg-LM-GBN" firstAttribute="centerY" secondItem="Xvi-SF-5fR" secondAttribute="centerY" multiplier="1.6" id="tTo-aN-X1W"/>
+                            <constraint firstItem="Ogg-LM-GBN" firstAttribute="height" secondItem="Xvi-SF-5fR" secondAttribute="height" multiplier="0.0410798" id="wAM-kb-2Bm"/>
+                            <constraint firstItem="lYU-Pj-q1g" firstAttribute="width" secondItem="Xvi-SF-5fR" secondAttribute="width" multiplier="0.881425" id="wiq-GI-tu9"/>
+                            <constraint firstItem="Ogg-LM-GBN" firstAttribute="centerX" secondItem="Xvi-SF-5fR" secondAttribute="centerX" id="xbb-MR-x8B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="52k-zR-yby" id="U1P-M7-S38"/>
+                        <outlet property="txtName" destination="opq-Cx-v5b" id="RDP-Gz-zfq"/>
+                        <outlet property="txtPhone" destination="6Wc-xD-KNx" id="kga-Eq-dsY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIh-ey-ecF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="-127"/>
+        </scene>
+        <!--CollegeDetailViewController-->
+        <scene sceneID="1El-LR-saX">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CollegeDetailViewController" storyboardName="College" referencedIdentifier="CollegeDetailViewController" id="8dK-RV-SJ5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CC8-Oh-qa8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="-737"/>
+        </scene>
+        <!--CollegeFormViewController-->
+        <scene sceneID="cps-1v-kFs">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CollegeFormViewController" storyboardName="College" referencedIdentifier="CollegeFormViewController" id="0H8-IM-c4T" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilD-1h-YWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="-737"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ark-YO-jHg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cYD-EK-fsl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jYD-tt-vXm">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wGS-uV-Qh3" kind="relationship" relationship="rootViewController" id="nTT-ms-BIB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8me-uE-zXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-599.23664122137404" y="-133.09859154929578"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
